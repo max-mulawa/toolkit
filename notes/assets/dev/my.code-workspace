@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "abc-api"
+		},
+		{
+			"path": "abc"
+		},
+	],
+	"launch": {
+	},	
+	"settings": {
+		"files.autoSave": "onWindowChange",
+		"editor.stickyScroll.enabled":true
+		
+	}
+}

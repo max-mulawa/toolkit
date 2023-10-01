@@ -1,0 +1,47 @@
+# docs on VS Code Rest Client https://marketplace.visualstudio.com/items?itemName=humao.rest-client
+@kb_id = 13323
+@order_id = 133010
+#1305
+
+### get 
+GET http://localhost:8040/order?knowledge_base_id={{kb_id}} HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{$processEnv INTERNAL_TOKEN}}
+
+### get order by id
+GET http://localhost:8040/order?id={{order_id}} HTTP/1.1
+content-type: application/json
+Authorization: Bearer {{$processEnv INTERNAL_TOKEN}}
+
+### create order 
+POST http://localhost:8040/order
+content-type: application/json
+Authorization: Bearer {{$processEnv INTERNAL_TOKEN}}
+
+{
+    "knowledge_base_id": {{kb_id}},
+    "type": "web_scrape"
+}
+
+### update order 
+PUT http://localhost:8040/order?id={{order_id}}
+content-type: application/json
+Authorization: Bearer {{$processEnv INTERNAL_TOKEN}}
+
+{
+   
+    "internal": false,
+}
+
+### Run order sync
+PUT http://localhost:8040/refresh_order?id={{order_id}}
+content-type: application/json
+Authorization: Bearer {{$processEnv INTERNAL_TOKEN}}
+
+### Archive order
+PUT http://localhost:8040/order/archive?id={{order_id}}
+Authorization: Bearer {{$processEnv INTERNAL_TOKEN}}
+
+### Delete 
+DELETE http://localhost:8040/order?id={{order_id}}
+Authorization: Bearer {{$processEnv INTERNAL_TOKEN}}
